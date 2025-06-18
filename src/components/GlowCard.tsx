@@ -6,11 +6,12 @@ interface GlowCardProps {
   description: string;
   icon: React.ReactNode;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const GlowCard: React.FC<GlowCardProps> = ({ title, description, icon, className = "" }) => {
+const GlowCard: React.FC<GlowCardProps> = ({ title, description, icon, className = "", style }) => {
   return (
-    <div className={`group relative ${className}`}>
+    <div className={`group relative ${className}`} style={style}>
       <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-blue-600 rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-500 blur-xl animate-glow-pulse"></div>
       
       <div className="relative glass-effect rounded-2xl p-8 h-full transform transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl border border-white/10">
